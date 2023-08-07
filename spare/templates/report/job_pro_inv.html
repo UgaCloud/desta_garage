@@ -1,0 +1,172 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+{%load humanize%}
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <!-- ./row -->
+    <div class="row">
+        <!-- ./col -->
+        <div class="col-12">
+            <div class="card">
+                {%if job_card_request %}
+                <!-- ./ card-header -->
+                <div class="card-header">
+                    <h3 class="card-title">Job Item</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- ./card-body -->
+                <div class="card-body">
+                <!-- id="dataTables-example" class="table table-bordered table-hover" data-page-length='100' -->
+                    <table id="sample-list" class="table table-striped" data-page-length='100'>
+                        <thead>
+                        <tr>
+                            <th>Job Code</th>
+                            <th>Item</th>
+                            <th>Date</th>
+                            
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                           
+                            
+                            <th>Total Cost</th>
+                            <th>#</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in job_card_request %}
+                        <tr>
+                            <td>{{item.jobcard.code}}</td>
+                            <td>{{item.items.item.item_name}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.items.item.unit_price|intcomma}}/-</td>
+                            <td>{{item.quantity}}</td>
+                           
+                           
+                            <td>
+                                <a href="" style="color:inherit">
+                                    <i class="fa fa-edit"></i>
+                                </a> |
+                                <a href="" style="color: inherit">
+                                    
+                                </a>
+                            <td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+                {%else%}
+                <div class="card-body">
+                    <h4>No Data available</h4>
+                </div>
+                {%endif%}
+            </div>
+            <!-- /.card -->
+            <div class="card">
+                {%if job_item %}
+                <!-- ./ card-header -->
+                <div class="card-header">
+                    <h3 class="card-title">Service Item</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- ./card-body -->
+                <div class="card-body">
+                <!-- id="dataTables-example" class="table table-bordered table-hover" data-page-length='100' -->
+                    <table id="sample-list" class="table table-striped" data-page-length='100'>
+                        <thead>
+                        <tr>
+                            <th>Card Code</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total Cost</th>
+                            
+                            <th>#</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for service in job_item %}
+                        <tr>
+                            <td>{{service.jobcard.code}}</td>
+                            <td>{{service.services.name}}</td>
+                           
+                           
+                            <td>
+                                <a href="" style="color:inherit">
+                                    <i class="fa fa-edit"></i>
+                                </a> |
+                                <a href="" style="color: inherit">
+                                    
+                                </a>
+                            <td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+                {%else%}
+                <div class="card-body">
+                    <h4>No Data available</h4>
+                </div>
+                {%endif%}
+            </div>
+            <!-- end card  -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+            <div class="card">
+               
+                <!-- /.card-body -->               
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+
+<!-- /.modal -->
+
+<!-- Confirm Submit -->
+
+<!-- /.modal -->
+
+<!-- DataTables -->
+<!-- <script src="{% static 'plugins/datatables/jquery.dataTables.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js'%}"></script> -->
+
+<!-- page script -->
+<script>
+
+//   $(function () {
+//     $("#example1").DataTable({
+//       "responsive": true,
+//       "autoWidth": false,
+//     });
+//     $('#example2').DataTable({
+//       "paging": true,
+//       "lengthChange": false,
+//       "searching": false,
+//       "ordering": true,
+//       "info": true,
+//       "autoWidth": false,
+//       "responsive": true,
+//     });
+//   });
+// </script>
+{% endblock content %}

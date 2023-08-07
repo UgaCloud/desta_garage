@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django-crispy-forms = "*"
+pillow = "*"
+boto3 = "*"
+django-storages = "*"
+python-decouple = "*"
+django-xhtml2pdf = "*"
+django = "==3.0.7"
+xhtml2pdf = "*"
+
+[requires]
+python_version = "3.11.3"
+
+[pipenv]
+allow_prereleases = true

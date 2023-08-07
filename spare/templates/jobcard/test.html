@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    
+   
+    <link rel="stylesheet" type="text/css" href="{% static 'test/css/jquery.dataTables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'test/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'test/css/dataTables.bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'test/css/buttons.dataTables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'test/css/style.css' %}">
+
+    <title>Beautiful Tables</title>
+</head>
+
+<body class="container">
+<h1 class="text-center">Sample DataTables Project</h1>
+
+<table id="maintable" class="display compact cell-border" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>City</th>
+        <th>Age</th>
+        <th>Start Date</th>
+        <th>Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Tiger Nixon</td>
+        <td>System Architecture</td>
+        <td>Edinburgh</td>
+        <td>61</td>
+        <td>2011/04/25</td>
+        <td>$320,800</td>
+    </tr>
+
+  
+    </tbody>
+    <tfoot style="background-color: #c0c0c0; color: #ffffff; font-size: 0.9em; ">
+    <tr>
+        <th>Names</th>
+        <th>Position</th>
+        <th>City</th>
+        <th>Age</th>
+        <th>Start Date</th>
+        <th>Salary</th>
+    </tr>
+    </tfoot>
+</table>
+<script src="{% static 'test/js/buttons.colVis.min.js' %}"></script>
+<script src="{% static 'test/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'test/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'test/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'test/js/jszip.min.js' %}"></script>
+<script src="{% static 'test/js/pdfmake.min.js' %}"></script>
+<script src="{% static 'test/js/vfs_fonts.js' %}"></script>
+<script src="{% static 'test/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'test/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'test/js/app.js' %}"></script>
+<script src="{% static 'test/js/jquery.mark.min.js' %}"></script>
+<script src="{% static 'test/js/datatables.mark.js' %}"></script>
+<script src="{% static 'test/js/buttons.colVis.min.js' %}"></script>
+<footer>For documentation and licensing visit <a href="https://datatables.net/">DataTables</a></footer>
+</body>
+
+</html>

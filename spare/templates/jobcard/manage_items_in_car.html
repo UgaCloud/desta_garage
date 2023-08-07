@@ -1,0 +1,186 @@
+{% extends '../base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+
+
+{%block page_title%}
+Manage Damages
+{% endblock%}
+{% block right_button%}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-sample">
+    Add Item
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-sample">
+    Add Service
+</button>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <!-- ./row -->
+    <div class="row">
+        <!-- ./col -->
+        <div class="col-12">
+            <div class="card">
+                {%if damages %}
+                <!-- ./ card-header -->
+                <div class="card-header">
+                    <h3 class="card-title">Damages</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- ./card-body -->
+                <div class="card-body">
+                <!-- id="dataTables-example" class="table table-bordered table-hover" data-page-length='100' -->
+                    <table id="sample-list" class="table table-striped" data-page-length='100'>
+                        <thead>
+                        <tr>
+                            <th>Damage Name</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                           
+                            
+                            <th>Total Cost</th>
+                            <th>#</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for damage in damages %}
+                        <tr>
+                            <td>{{damage.name}}</td>
+                            <td>{{damage.description}}</td>
+                            <td>{{damage.date_in}}</td>
+                            <td>{{damage.unit_price|intcomma}}/-</td>
+                            <td>{{damage.quantity}}</td>
+                            <td>{{damage.total_cost|intcomma}}/-</td>
+                           
+                            <td>
+                                <a href="" style="color:inherit">
+                                    <i class="fa fa-edit"></i>
+                                </a> |
+                                <a href="" style="color: inherit">
+                                    
+                                </a>
+                            <td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+                {%else%}
+                <div class="card-body">
+                    <h4>No Data available</h4>
+                </div>
+                {%endif%}
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<div class="modal fade" id="modal-add-sample">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Damage</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ damage_form|crispy }}
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div class="modal fade" id="modal-add-car">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Car Item</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ item_in_car_form|crispy }}
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Confirm Submit -->
+<div class="modal fade" id="modal-confirm-submit">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirm Submit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to submit this Wagesheet?
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Dismiss</button>
+                <button type="submit" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- DataTables -->
+<!-- <script src="{% static 'plugins/datatables/jquery.dataTables.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js'%}"></script> -->
+
+<!-- page script -->
+<script>
+
+//   $(function () {
+//     $("#example1").DataTable({
+//       "responsive": true,
+//       "autoWidth": false,
+//     });
+//     $('#example2').DataTable({
+//       "paging": true,
+//       "lengthChange": false,
+//       "searching": false,
+//       "ordering": true,
+//       "info": true,
+//       "autoWidth": false,
+//       "responsive": true,
+//     });
+//   });
+// </script>
+{% endblock content %}

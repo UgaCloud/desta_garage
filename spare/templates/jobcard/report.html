@@ -1,0 +1,144 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{%block page_title%}
+Manage JobCard Details
+{% endblock%}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- ./row -->
+    <div class="row">
+        <!-- ./col -->
+        <div class="col-12">
+            <div class="card">
+                <!-- ./ card-header -->
+                <!-- <div class="card-header">
+                    <h3 class="card-title">Sample</h3>
+                </div> -->
+                <!-- /.card-header -->
+                <!-- ./card-body -->
+                {%if job_card_request %}
+                <div class="card-body">
+                    
+                    
+                <h2 class="text-center">JobCard Code: <b>{{job_card_request.code}}/ {{job_card_request.plate_no}} </b></h2>
+                
+                <h5> Date In: {{job_card_request.date_in}} | Date Out : {{job_card_request.date_out}}
+                     | Customer Name : {{job_card_request.customer_name}} | Customer Contact : {{job_card_request.customer_contact}} </h5>
+                    <table id="dataTables-example" class="table table-table-striped" data-page-length='100'>
+                        <tbody>
+                            <tr>
+                                <th >Supervisor</th>
+                                <td >
+                                    {{job_card_request.supervisor}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>year</th>
+                                <td>{{job_card_request.year}}</td>
+                            </tr>
+                            <tr>
+                                <th>Mileage In</th>
+                                <td>{{job_card_request.mileage_in}}</td>
+                            </tr>
+                            <tr>
+                                <th>Mileage Out</th>
+                                <td>{{job_card_request.mileage_out}}</td>
+                            </tr> 
+                            <tr> 
+                                <th> Brought in by</th>
+                                <td>{{job_card_request.brought_in_by}}</td>
+                            </tr>
+                            <tr> 
+                                <th> Taken out by</th>
+                                <td>{{job_card_request.Taken_out_by}}</td>
+                            </tr>
+                            <tr> 
+                                <th> Fuel Gauge In</th>
+                                <td>{{job_card_request.fuel_gauge_in}}</td>
+                            </tr>
+                            <tr> 
+                                <th> Fuel_Gauge_Out</th>
+                                <td>{{job_card_request.fuel_gauge_out}}</td>
+                            </tr>
+                            <tr> 
+                                <th> Number Of Nuts</th>
+                                <td>{{job_card_request.number_of_nuts}}</td>
+                            </tr>
+                            <tr> 
+                                <th> Number Of Nuts</th>
+                                <td>{{job_card_request.number_of_nuts}}</td>
+                            </tr>
+                            <tr> 
+                                <th> Customer Approval</th>
+                                <td>{{job_card_request.customer_approval}} </td>
+                            </tr>
+                            <tr> 
+                                <th> Dashboard Light</th>
+                                <td>{{job_card_request.dash_light_on}} </td>
+                            </tr>
+                            <tr> 
+                                <th>  Car Type</th>
+                                <td>{{job_card_request.car_type}} </td>
+                            </tr>
+                            <tr> 
+                                <th>  Car Description</th>
+                                <td>{{job_card_request.car_description}} </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+            {%else%}
+            <div class="card-body">
+                <h4>No Data available</h4>
+            </div>
+            {%endif%}
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+
+<!-- /.modal -->
+
+<!-- Confirm Submit -->
+
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- DataTables -->
+<!-- <script src="{% static 'plugins/datatables/jquery.dataTables.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js'%}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js'%}"></script> -->
+
+<!-- page script -->
+<script>
+
+//   $(function () {
+//     $("#example1").DataTable({
+//       "responsive": true,
+//       "autoWidth": false,
+//     });
+//     $('#example2').DataTable({
+//       "paging": true,
+//       "lengthChange": false,
+//       "searching": false,
+//       "ordering": true,
+//       "info": true,
+//       "autoWidth": false,
+//       "responsive": true,
+//     });
+//   });
+// </script>
+{% endblock content %}
