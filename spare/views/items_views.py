@@ -1,7 +1,7 @@
 from django.shortcuts import render,reverse,redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from spare.utils import render_to_pdf
+# from spare.utils import render_to_pdf
 from django.http import HttpResponse
 from spare.render import Render
 
