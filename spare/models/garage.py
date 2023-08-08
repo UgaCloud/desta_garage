@@ -127,7 +127,7 @@ class Damage(models.Model):
     date_in = models.DateField(auto_now=True)
     quantity= models.IntegerField()
     unit_price=models.IntegerField()
-    # photo=models.ImageField(upload_to='pic')
+    
     
 
     class Meta:
