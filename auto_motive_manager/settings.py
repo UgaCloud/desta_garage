@@ -91,6 +91,7 @@ TEMPLATES = [
     },
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 WSGI_APPLICATION = 'auto_motive_manager.wsgi.application'
 
 
