@@ -11,9 +11,9 @@ Manage Job
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-sample">
     Add Item
 </button> |
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-car">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-car">
     Add Service
-</button> -->
+</button>
 {% endblock %}
 {% block content %}
 
@@ -133,7 +133,7 @@ Manage Job
                            
                            
                             <td>
-                                <a href="{% url 'edit_job_card_service' service.id %}" style="color:inherit">
+                                <a href="{% url 'edit_job_card_service' job_request.id %}" style="color:inherit">
                                     <i class="fa fa-edit"></i>
                                 </a> |
                                 <a href="" style="color: inherit">
