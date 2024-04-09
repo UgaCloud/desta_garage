@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='jobcardservice',
             name='service',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, related_name='service', to='spare.Service'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='service', to='spare.Service'),
             preserve_default=False,
         ),
         migrations.AlterField(
