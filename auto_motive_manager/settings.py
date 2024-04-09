@@ -52,6 +52,7 @@ PROJECT_APP = [
     'auto_admin',
     'auto_auth',
     'crispy_forms',
+    'crispy_bootstrap4',
     'spare',
     # 'storages',
     
@@ -100,12 +101,8 @@ WSGI_APPLICATION = 'auto_motive_manager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'desta_garage',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
