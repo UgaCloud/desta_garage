@@ -24,9 +24,9 @@ admin.site.register(Item)
 admin.site.register(Measurement)
 admin.site.register(ItemMeasurement)
 
-admin.site.site_header = "Desta Auto Garage"
-admin.site.site_title = "Desta Auto Garage"
-admin.site.index_title = "Desta Auto Garage"
+admin.site.site_header = "GORITECH Auto Dealers"
+admin.site.site_title = "GORITECH Auto Dealers"
+admin.site.index_title = "GORITECH Auto Dealers"
 
 
 
