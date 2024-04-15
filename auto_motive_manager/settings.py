@@ -102,9 +102,9 @@ WSGI_APPLICATION = 'auto_motive_manager.wsgi.application'
 DATABASES = {
     'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'mydb',
-		'USER': 'root',
-		'PASSWORD': 'admin',
+		'NAME': 'btenzymw_goritech_garage',
+		'USER': 'btenzymw_goritech_user',
+		'PASSWORD': 'jamir1.022',
 		'HOST':'localhost',
 		'PORT':'3306',
     }
