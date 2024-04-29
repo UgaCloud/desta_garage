@@ -158,12 +158,12 @@ class JobCardItems(models.Model):
     date=models.DateField(auto_now=True)
     
     
-    # items = models.ForeignKey(
-    #     ItemMeasurement, 
-    #     on_delete=models.CASCADE,
-    #     related_name = 'items_mesurement'
-    # )
-    items = models.CharField(max_length=100)    
+    items = models.ForeignKey(
+        ItemMeasurement, 
+        on_delete=models.CASCADE,
+        related_name = 'items_mesurement'
+    )
+    # items = models.CharField(max_length=100)    
     jobcard = models.ForeignKey(
         JobCard,
         on_delete=models.CASCADE,
