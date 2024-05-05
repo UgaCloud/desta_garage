@@ -103,7 +103,7 @@ DATABASES = {
     'default': {
 		'ENGINE': 'django.db.backends.mysql',
 		'NAME': 'btenzymw_goritech_garage',
-		'USER': 'btenzymw_goritech_user	',
+		'USER': 'btenzymw_goritech_user',
 		'PASSWORD': 'seba.jamir@022',
 		'HOST':'localhost',
 		'PORT':'3306',
